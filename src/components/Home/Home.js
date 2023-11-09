@@ -45,7 +45,7 @@ const Home = () => {
     const {
       data: { All3APIData },
     } = await axios.get(
-      `http://localhost:5000/products/getall3apidata/${month}`
+      `https://transaction-dashboard-backend-sj.onrender.com/products/getall3apidata/${month}`
     );
 
     setSales(All3APIData[1]);
@@ -79,7 +79,7 @@ const Home = () => {
     const {
       data: { All3APIData },
     } = await axios.get(
-      `http://localhost:5000/products/getall3apidata/${e.target.value}`
+      `https://transaction-dashboard-backend-sj.onrender.com/products/getall3apidata/${e.target.value}`
     );
 
     setSales(All3APIData[1]);
