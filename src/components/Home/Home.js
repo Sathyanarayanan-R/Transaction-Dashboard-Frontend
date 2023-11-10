@@ -11,7 +11,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 
-import {getProductsBySearchAndPagination} from "../../actions/products";
+import { getProductsBySearchAndPagination } from "../../actions/products";
 import Products from "../Products/Products";
 import Pagination from "../Pagination";
 import useStyles from "./styles";
@@ -155,45 +155,45 @@ const Home = () => {
               <Products />
             </Grid>
             {month !== "All" &&
-            (<Container maxWidth="xl" style={{ marginTop: "10px" }}>
-              <Grid
-                container
-                justify="space-between"
-                alignItems="stretch"
-                spacing={1}
-                className={classes.gridContainer}
-              >
-                <Grid item xs={12} sm={6} md={5}>
-                  <AppBar
-                    className={classes.appBarSearch}
-                    position="static"
-                    color="inherit"
-                  >
+              <Container maxWidth="xl" style={{ marginTop: "10px" }}>
+                <Grid
+                  container
+                  justify="space-between"
+                  alignItems="stretch"
+                  spacing={1}
+                  className={classes.gridContainer}
+                >
+                  <Grid item xs={12} sm={6} md={5}>
+                    <AppBar
+                      className={classes.appBarSearch}
+                      position="static"
+                      color="inherit"
+                    >
                       <StatisticsPieChart
                         sales={sales}
                         month={
                           month[0].toUpperCase() + month.slice(1, month.length)
                         }
                       />
-                  </AppBar>
-                </Grid>
+                    </AppBar>
+                  </Grid>
 
-                <Grid item xs={12} sm={6} md={7}>
-                  <AppBar
-                    className={classes.appBarSearch}
-                    position="static"
-                    color="inherit"
-                  >
+                  <Grid item xs={12} sm={6} md={7}>
+                    <AppBar
+                      className={classes.appBarSearch}
+                      position="static"
+                      color="inherit"
+                    >
                       <TransactionsBarChart
                         priceRange={priceRange}
                         month={
                           month[0].toUpperCase() + month.slice(1, month.length)
                         }
                       />
-                  </AppBar>
+                    </AppBar>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Container> )}
+              </Container>}
           </Grid>
         </Container>
       </Grow>
