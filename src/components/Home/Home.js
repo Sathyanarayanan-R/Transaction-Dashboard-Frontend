@@ -154,7 +154,8 @@ const Home = () => {
             <Grid item xs={12} sm={6} md={12}>
               <Products />
             </Grid>
-            <Container maxWidth="xl" style={{ marginTop: "10px" }}>
+            {month !== "All" &&
+            (<Container maxWidth="xl" style={{ marginTop: "10px" }}>
               <Grid
                 container
                 justify="space-between"
@@ -168,14 +169,12 @@ const Home = () => {
                     position="static"
                     color="inherit"
                   >
-                    {month !== "All" && (
                       <StatisticsPieChart
                         sales={sales}
                         month={
                           month[0].toUpperCase() + month.slice(1, month.length)
                         }
                       />
-                    )}
                   </AppBar>
                 </Grid>
 
@@ -185,18 +184,16 @@ const Home = () => {
                     position="static"
                     color="inherit"
                   >
-                    {month !== "All" && (
                       <TransactionsBarChart
                         priceRange={priceRange}
                         month={
                           month[0].toUpperCase() + month.slice(1, month.length)
                         }
                       />
-                    )}
                   </AppBar>
                 </Grid>
               </Grid>
-            </Container>
+            </Container> )}
           </Grid>
         </Container>
       </Grow>
