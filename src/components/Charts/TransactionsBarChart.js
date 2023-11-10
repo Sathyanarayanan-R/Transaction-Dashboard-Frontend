@@ -3,8 +3,10 @@ import { Bar } from "react-chartjs-2";
 
 const TransactionsBarChart = ({ priceRange, month }) => {
 
-  const priceRangeLabels = priceRange?.map((items) => items.priceRange);
-  const totalNoOfItemsData = priceRange?.map((items) => items.totalNoOfItems);
+  const sortedPriceRange = priceRange?.sort((a, b) => a._id - b._id);
+
+  const priceRangeLabels = sortedPriceRange?.map((items) => items.priceRange);
+  const totalNoOfItemsData = sortedPriceRange?.map((items) => items.totalNoOfItems);
 
   const labels = priceRangeLabels
   const data = {
